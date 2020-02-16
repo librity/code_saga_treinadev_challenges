@@ -9,9 +9,7 @@ class ArrayUtils
   end
 
   def self.tabuada(number)
-    table = []
-    number.times { |i| table[i] = multiplos(10, i + 1) }
-    table
+    (0...number).map { |i| multiplos(10, i + 1) }
   end
 
   def self.ultimo(array)

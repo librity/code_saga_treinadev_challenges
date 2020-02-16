@@ -14,3 +14,6 @@ git submodule add ~/Documents/Projects/code_saga/oo-loja-online-parte2 oo-loja-o
 git submodule add ~/Documents/Projects/code_saga/ruby-array-1 ruby-array-1
 git submodule add ~/Documents/Projects/code_saga/ruby-de-baunilha-tipo-de-dados ruby-de-baunilha-tipo-de-dados
 git submodule add ~/Documents/Projects/code_saga/tamanho_palavras tamanho_palavras
+
+# delete all .git from the sub-directories:
+# $ find . | grep .git | xargs rm -rf
