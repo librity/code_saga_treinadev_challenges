@@ -3,9 +3,7 @@
 # A class that does 5th-grade math
 class ArrayUtils
   def self.multiplos(qtd, multiplo)
-    multiples = []
-    qtd.times { |i| multiples[i] = multiplo * (i + 1) }
-    multiples
+    (0...qtd).map { |i| multiplo * (i + 1) }
   end
 
   def self.tabuada(number)

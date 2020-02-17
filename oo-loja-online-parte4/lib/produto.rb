@@ -1,7 +1,7 @@
 class Produto
   attr_accessor :nome, :categoria, :preco, :estoque
 
-  def initialize(nome:, categoria: Categoria.new, preco: 0, estoque: 0)
+  def initialize(nome:, categoria: Categoria.new, preco:, estoque:)
     @nome = nome
     @categoria = categoria
     @preco = preco

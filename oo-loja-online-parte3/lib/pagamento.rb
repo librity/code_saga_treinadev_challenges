@@ -1,21 +1,15 @@
-# frozen_string_literal: true
-
-# A class that drains your wealth of nations.
 class Pagamento
   attr_accessor :produto, :quantidade, :preco, :valor
 
-  def new_product
-    Produto.new(nome: 'Geral')
-  end
-
-  def initialize(quantidade:, produto: new_product, preco: new_product.preco)
+  def initialize(quantidade:, produto: 'Sem nome', preco: 0)
     @quantidade = quantidade
     @produto = produto
     @preco = preco
   end
 
   def calcular_valor
-    @valor = @quantidade * preco
+    @produto.remove_estoque(@quantidade)
+    @valor = @quantidade * @produto.preco
   end
 
   def aplicar_desconto(porcentagem)
