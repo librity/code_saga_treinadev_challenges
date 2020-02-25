@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # A class that manipulates arrays in funny ways.
 class ArrayUtils
   def self.compara(list1, list2)
@@ -5,14 +7,9 @@ class ArrayUtils
   end
 
   def self.divisiveis(divisor1, divisor2)
-    list = (1..50).to_a
-    div1 = list.select { |i| (i % divisor1).zero? && (i % divisor2).zero? }
-    list -= div1
-    div2 = list.select { |i| (i % divisor1).zero? }
-    list -= div2
-    div3 = list.select { |i| (i % divisor2).zero? }
-
-    [div1, div2, div3]
+    [1.upto(50).select { |n| (n % divisor1).zero? && (n % divisor2).zero? },
+     1.upto(50).select { |n| (n % divisor1).zero? && !(n % divisor2).zero? },
+     1.upto(50).select { |n| (n % divisor2).zero? && !(n % divisor1).zero? }]
   end
 
   def self.soma(list)
@@ -20,7 +17,6 @@ class ArrayUtils
   end
 
   def self.combinar(list1, list2)
-    size = list2.length
-    list1.map { |i| [i] * size }.flatten.zip([list2 * size].flatten)
+    list1.product(list2)
   end
 end

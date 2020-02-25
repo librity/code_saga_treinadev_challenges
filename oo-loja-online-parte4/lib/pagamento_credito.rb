@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 class PagamentoCredito < Pagamento
   attr_accessor :juros

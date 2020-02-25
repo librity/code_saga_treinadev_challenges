@@ -1,10 +1,11 @@
-class Pagamento
-  attr_accessor :produto, :quantidade, :preco, :valor
+# frozen_string_literal: true
 
-  def initialize(quantidade:, produto: 'Sem nome', preco: 0)
+class Pagamento
+  attr_accessor :produto, :quantidade, :valor
+
+  def initialize(quantidade:, produto:)
     @quantidade = quantidade
     @produto = produto
-    @preco = preco
   end
 
   def calcular_valor

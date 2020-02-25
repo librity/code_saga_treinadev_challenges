@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Pagamento
   attr_accessor :produto, :quantidade, :valor
 
@@ -7,12 +9,11 @@ class Pagamento
   end
 
   def calcular_valor
-    produto.remove_estoque(quantidade)
-    @valor = @quantidade * produto.preco
+    @produto.remove_estoque(@quantidade)
+    @valor = @quantidade * @produto.preco
   end
 
   def aplicar_desconto(porcentagem)
-    @valor -= @valor * porcentagem/100
+    @valor -= @valor * porcentagem / 100
   end
 end
-

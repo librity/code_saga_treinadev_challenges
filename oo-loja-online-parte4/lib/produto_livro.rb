@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 class ProdutoLivro < Produto
   attr_accessor :autor, :genero, :paginas

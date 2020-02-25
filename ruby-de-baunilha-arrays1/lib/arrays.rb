@@ -3,16 +3,10 @@
 # A class that transforms vectors.
 class Arrays
   def self.converte_impares_por(lista, numero)
-    odds = lista.reject { |e| (e % 2).zero? }
-    multiples = []
-    odds.each_with_index { |v, i| multiples[i] = v * numero }
-    [odds, multiples]
+    [lista.reject! { |e| (e % 2).zero? } || [], lista.map { |v| v * numero }]
   end
 
   def self.converte_pares_por(lista, numero)
-    odds = lista.select { |e| (e % 2).zero? }
-    multiples = []
-    odds.each_with_index { |v, i| multiples[i] = v * numero }
-    [odds, multiples]
+    [lista.select! { |e| (e % 2).zero? } || [], lista.map { |v| v * numero }]
   end
 end
