@@ -1,0 +1,6 @@
+<%= form_for @recipe_type do |f| %>
+  <%= f.label :name, 'Nome' %>
+  <%= f.text_field :name, class:c 'form-control' %>
+
+  <%= f.submit 'Enviar' %>
+<% end %>

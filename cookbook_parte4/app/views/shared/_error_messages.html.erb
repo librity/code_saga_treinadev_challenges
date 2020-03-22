@@ -1,0 +1,10 @@
+<% if object.errors.any? %>
+    <div>
+      O formulario contem <%= object.errors.count %> erro(s)
+    </div>
+    <ul>
+      <% object.errors.full_messages.each do |msg| %>
+        <li> <%= msg %> </li>
+      <% end %>
+    </ul>
+<% end %>

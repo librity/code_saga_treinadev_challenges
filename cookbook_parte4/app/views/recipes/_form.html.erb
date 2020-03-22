@@ -1,0 +1,26 @@
+<%= form_with(model: @recipe, local: true) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  
+  <%= f.label :title, 'Título' %>
+  <%= f.text_field :title, class: 'form-control' %>
+  
+  <%= f.label :recipe_type, 'Tipo da Receita' %>
+  <%= f.text_field :recipe_type, class: 'form-control' %>
+  
+  <%= f.label :cuisine, 'Cozinha' %>
+  <%= f.text_field :cuisine, class: 'form-control' %>
+  
+  <%= f.label :difficulty, 'Dificuldade' %>
+  <%= f.text_field :difficulty, class: 'form-control' %>
+  
+  <%= f.label :cook_time, 'Tempo de Preparo' %>
+  <%= f.text_field :cook_time, class: 'form-control' %>
+  
+  <%= f.label :ingredients, 'Ingredientes' %>
+  <%= f.text_field :ingredients, class: 'form-control' %>
+  
+  <%= f.label :cook_method, 'Como Preparar' %>
+  <%= f.text_field :cook_method, class: 'form-control'%>
+
+  <%= f.submit yield(:button_text) %>
+<% end %>
